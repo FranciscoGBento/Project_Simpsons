@@ -13,6 +13,7 @@ class Game {
         this.vegetablesArray = [];
         this.mrBurnsArray = [];
         this.beerArray = [];
+        this.donutsArray = [];
         this.frames = 0;
     }
 
@@ -32,7 +33,6 @@ class Game {
         this.drawBackground();
         this.homer.drawHomer();
         this.createBadWater();
-        /*this.mrburns.drawMrBurns(); */
         this.waterArray.forEach((daWater) => {
             daWater.drawWaterAbove();
         });
@@ -48,6 +48,11 @@ class Game {
         this.beerArray.forEach((daBeer) => {
             daBeer.drawBeer();
         });
+        this.createDonuts();
+        this.donutsArray.forEach((daDonu) => {
+            daDonu.drawDonuts()
+        });
+        this.checkGameOver();
     }
 
 
@@ -71,11 +76,42 @@ class Game {
     }
 
     createBeer(){
-        if (this.frames % 200 === 0){
+        if (this.frames % 300 === 0){
             this.beerArray.push(new Beer(this));
        }
 
     }
+
+    createDonuts(){
+        if (this.frames % 300 === 0){
+            this.donutsArray.push(new Donuts(this));
+       }
+    }
+
+    checkGameOver() {
+        const homerSimpson = this.homer;
+        const crashed = this.waterArray.some(function (daWater) {
+          return homerSimpson.crashWith(daWater);
+        });
+        const crashed2 = this.vegetablesArray.some(function (daVeg) {
+           return homerSimpson.crashWith(daVeg);
+        });
+        const crashed3 = this.mrBurnsArray.some(function (daBurns) {
+           return homerSimpson.crashWith(daBurns);
+        });
+    
+        if (crashed) {
+          this.stop();
+        } else if (crashed2){
+          this.stop();
+        } else if (crashed3){
+          this.stop();
+        }
+      }
+
+      stop(){
+        clearInterval(this.intervalId);
+      }
 
 
 
