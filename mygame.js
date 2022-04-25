@@ -131,9 +131,9 @@ class Game {
         })
     }
 
-      stop(){
+    stop(){
         clearInterval(this.intervalId);
-      }
+    }
 
 
 
@@ -148,4 +148,11 @@ class Game {
         this.ctx.fillText(`Score: ${this.totalScore}`, 5, 40 );
 
     }
+
+    reset(){
+        this.ctx.clearRect(0, 0, this.width, this.height);
+          
+
+    }
+
 }
