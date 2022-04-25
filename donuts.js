@@ -6,6 +6,7 @@ class Donuts {
         this.width = 25;
         this.height = 50;
         this.img = new Image();
+        this.points = 1;
     }
 
     left() {

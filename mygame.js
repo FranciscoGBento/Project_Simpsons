@@ -15,6 +15,7 @@ class Game {
         this.beerArray = [];
         this.donutsArray = [];
         this.frames = 0;
+        this.totalScore = 0;
     }
 
     start(){
@@ -52,6 +53,9 @@ class Game {
         this.donutsArray.forEach((daDonu) => {
             daDonu.drawDonuts()
         });
+        
+        this.scoreByItem();
+        this.drawScore();
         this.checkGameOver();
     }
 
@@ -109,6 +113,24 @@ class Game {
         }
       }
 
+      scoreByItem(){
+        const homerSimpson = this.homer;
+
+        this.beerArray.forEach((beer, i, arr) => {
+           if(homerSimpson.crashWith(beer)) {
+               arr.splice(i, 1)
+               this.totalScore +=2
+           }
+        })
+       
+        this.donutsArray.forEach((donuts, i, arr) => {
+        if(homerSimpson.crashWith(donuts)) {
+            arr.splice(i, 1)
+            this.totalScore +=1
+        }
+        })
+    }
+
       stop(){
         clearInterval(this.intervalId);
       }
@@ -118,5 +140,12 @@ class Game {
     drawBackground() {
         this.background.src = "/docs/assets/imgs/moes.jpg";
         this.ctx.drawImage(this.background, this.x, this.y, this.width, this.height)
+    }
+
+    drawScore(){
+        this.ctx.font = '32px serif';
+        this.ctx.fillStyle = 'white';
+        this.ctx.fillText(`Score: ${this.totalScore}`, 5, 40 );
+
     }
 }

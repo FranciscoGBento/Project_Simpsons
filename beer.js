@@ -6,6 +6,7 @@ class Beer {
         this.width = 25;
         this.height = 50;
         this.img = new Image();
+        this.points = 2;
     }
 
     left() {
