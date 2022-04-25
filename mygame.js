@@ -8,6 +8,12 @@ class Game {
         this.width = 900;
         this.height = 500;
         this.intervalId = null;
+        this.homer = null;
+        this.waterArray = [];
+        this.vegetablesArray = [];
+        this.mrBurnsArray = [];
+        this.beerArray = [];
+        this.frames = 0;
     }
 
     start(){
@@ -21,8 +27,53 @@ class Game {
     }
 
     update(){
+        this.ctx.clearRect(0, 0, this.width, this.height)
+        this.frames++;
         this.drawBackground();
         this.homer.drawHomer();
+        this.createBadWater();
+        /*this.mrburns.drawMrBurns(); */
+        this.waterArray.forEach((daWater) => {
+            daWater.drawWaterAbove();
+        });
+        this.createBadVeg();
+        this.vegetablesArray.forEach((daVeg) => {
+            daVeg.drawVegetables();
+        });
+        this.createMrBurns();
+        this.mrBurnsArray.forEach((daBurns) => {
+            daBurns.drawMrBurns();
+        });
+        this.createBeer();
+        this.beerArray.forEach((daBeer) => {
+            daBeer.drawBeer();
+        });
+    }
+
+
+
+    createBadWater(){
+        if (this.frames % 300 === 0){
+             this.waterArray.push(new Water(this));
+        }
+    }
+    
+    createBadVeg(){
+        if (this.frames % 300 === 0){
+             this.vegetablesArray.push(new Vegetables(this));
+        }
+    }
+
+    createMrBurns(){
+        if (this.frames % 300 === 0){
+            this.mrBurnsArray.push(new mrBurns(this));
+       }   
+    }
+
+    createBeer(){
+        if (this.frames % 200 === 0){
+            this.beerArray.push(new Beer(this));
+       }
 
     }
 
