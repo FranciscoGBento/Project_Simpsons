@@ -19,6 +19,8 @@ class Game {
         this.countdownTimer = 60;
         this.nelson = new Image();
         this.soundNelson = new Audio('/docs/assets/sounds/aHaHnelson.mp3');
+        this.donutsSound = new Audio('/docs/assets/sounds/donutsSound.mp3');
+        this.beerSound = new Audio('/docs/assets/sounds/beerSound.wav');
 
     }
 
@@ -143,13 +145,21 @@ class Game {
                arr.splice(i, 1)
                this.totalScore +=2
            }
+           if(homerSimpson.crashWith(beer)) {
+            this.beerSound.play()
+            
+        }
         })
        
         this.donutsArray.forEach((donuts, i, arr) => {
-        if(homerSimpson.crashWith(donuts)) {
-            arr.splice(i, 1)
-            this.totalScore +=1
-        }
+            if(homerSimpson.crashWith(donuts)) {
+               arr.splice(i, 1)
+               this.totalScore +=1
+            }
+            if(homerSimpson.crashWith(donuts)) {
+                this.donutsSound.play()
+                
+            }
         })
     }
 
