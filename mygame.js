@@ -17,6 +17,7 @@ class Game {
         this.frames = 0;
         this.totalScore = 0;
         this.countdownTimer = 60;
+        this.nelson = new Image();
 
     }
 
@@ -153,6 +154,8 @@ class Game {
 
     stop(){
         clearInterval(this.intervalId);
+        this.nelson.src = "/docs/assets/imgs/nelson1.png"
+        this.ctx.drawImage(this.nelson, this.x, this.y, this.width, this.height)
     }
 
 

@@ -12,7 +12,11 @@ body {
     height: 100;
 }
 
+
+
 #canvas {
+    background-image: url("/docs/assets/imgs/canvasBackground.jpg");
+    background-size: contain;
     position: absolute;
     top:1;
     bottom: 0;
