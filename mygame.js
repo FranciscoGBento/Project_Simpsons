@@ -18,6 +18,7 @@ class Game {
         this.totalScore = 0;
         this.countdownTimer = 60;
         this.nelson = new Image();
+        this.soundNelson = new Audio('/docs/assets/sounds/aHaHnelson.mp3');
 
     }
 
@@ -79,7 +80,7 @@ class Game {
         
         this.ctx.font = '32px serif';
         this.ctx.fillStyle = 'white';
-        this.ctx.fillText(`Timer: ${this.countdownTimer}`, 5, 80 );
+        this.ctx.fillText(`TIMER: ${this.countdownTimer}`, 730, 40 );
 
     }
     
@@ -154,6 +155,7 @@ class Game {
 
     stop(){
         clearInterval(this.intervalId);
+        this.soundNelson.play()
         this.nelson.src = "/docs/assets/imgs/nelson1.png"
         this.ctx.drawImage(this.nelson, this.x, this.y, this.width, this.height)
     }
@@ -168,7 +170,7 @@ class Game {
     drawScore(){
         this.ctx.font = '32px serif';
         this.ctx.fillStyle = 'white';
-        this.ctx.fillText(`Score: ${this.totalScore}`, 5, 40 );
+        this.ctx.fillText(`SCORE: ${this.totalScore}`, 5, 40 );
 
     }
 
