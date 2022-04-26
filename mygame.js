@@ -21,11 +21,12 @@ class Game {
         this.soundNelson = new Audio('/docs/assets/sounds/aHaHnelson.mp3');
         this.donutsSound = new Audio('/docs/assets/sounds/donutsSound.mp3');
         this.beerSound = new Audio('/docs/assets/sounds/beerSound.wav');
+        this.waterSound = new Audio('/docs/assets/sounds/dohHomer.WAV')
 
     }
 
     start(){
-        this.homer = new Player(this, 400, 200, 100, 100)
+        this.homer = new Player(this, 400, 200, 75, 100)
         this.homer.img.src = "/docs/assets/imgs/homerightup.png"; 
         this.controls = new Controls(this);
         this.controls.keyboardEvents();
@@ -113,9 +114,6 @@ class Game {
 
     checkGameOver() {
         const homerSimpson = this.homer;
-        const crashed = this.waterArray.some(function (daWater) {
-          return homerSimpson.crashWith(daWater);
-        });
         const crashed2 = this.vegetablesArray.some(function (daVeg) {
            return homerSimpson.crashWith(daVeg);
         });
@@ -127,9 +125,7 @@ class Game {
             this.stop()
         }
     
-        if (crashed) {
-          this.stop();
-        } else if (crashed2){
+        if (crashed2){
           this.stop();
         } else if (crashed3){
           this.stop();
@@ -149,6 +145,17 @@ class Game {
             this.beerSound.play()
             
         }
+        })
+
+        this.waterArray.forEach((daWater, i, arr) => {
+            if(homerSimpson.crashWith(daWater)) {
+                arr.splice(i, 1)
+                this.totalScore -=1;
+            }
+            if(homerSimpson.crashWith(daWater)) {
+                this.waterSound.play();
+            }
+
         })
        
         this.donutsArray.forEach((donuts, i, arr) => {

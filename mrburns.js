@@ -3,8 +3,8 @@ class mrBurns {
         this.game = game;
         this.x = Math.floor(Math.random() * 800);
         this.y = 0;
-        this.width = 75;
-        this.height = 50;
+        this.width = 50;
+        this.height = 70;
         this.img = new Image();
         
 
