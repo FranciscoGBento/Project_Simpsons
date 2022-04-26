@@ -1,14 +1,20 @@
 body {
     background-image: url("/docs/assets/imgs/cssBackground.jpg");
-    background-size: 1500px;
+    background-size: 1550px;
 }
 
-
-
+.title {
+    width: 50vw;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100;
+}
 
 #canvas {
     position: absolute;
-    top:0;
+    top:1;
     bottom: 0;
     left: 0;
     right: 0;

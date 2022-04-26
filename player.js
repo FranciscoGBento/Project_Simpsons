@@ -6,25 +6,30 @@ class Player {
         this.width = width;
         this.height = height;
         this.img = new Image();
+        
     }
 
     drawHomer(){
-        this.img.src = "/docs/assets/imgs/homerl.png";
+        
         this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
     }
 
     moveLeft() {
-        this.x -= 10;
-      }
+      this.img.src = "/docs/assets/imgs/homerleftup.png"
+      this.x -= 10;
+    }
     moveRight() {
-        this.x += 10;
-      }
+      this.img.src = "/docs/assets/imgs/homerightup.png"
+      this.x += 10;
+    }
     moveUp() {
-        this.y -= 10;
-      }
+      this.img.src = "/docs/assets/imgs/homerup.png"
+      this.y -= 10;
+    }
     moveDown() {
-        this.y += 10;
-      }
+      this.img.src = "/docs/assets/imgs/homergdown.png"
+      this.y += 10;
+    }
 
       left() {
         return this.x;

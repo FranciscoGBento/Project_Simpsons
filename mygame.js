@@ -16,20 +16,25 @@ class Game {
         this.donutsArray = [];
         this.frames = 0;
         this.totalScore = 0;
+        this.countdownTimer = 60;
+
     }
 
     start(){
-        this.homer = new Player(this, 400, 200, 75, 100)
+        this.homer = new Player(this, 400, 200, 100, 100)
+        this.homer.img.src = "/docs/assets/imgs/homerightup.png"; 
         this.controls = new Controls(this);
         this.controls.keyboardEvents();
         this.intervalId = setInterval(() => {
             this.update();
           }, 1000 / 60);
+        
 
     }
 
     update(){
         this.ctx.clearRect(0, 0, this.width, this.height)
+        this.countdownTimer = 60 - Math.floor(this.frames / 60);
         this.frames++;
         this.drawBackground();
         this.homer.drawHomer();
@@ -56,25 +61,35 @@ class Game {
         
         this.scoreByItem();
         this.drawScore();
+        this.createTimer();
         this.checkGameOver();
+
     }
 
 
 
     createBadWater(){
-        if (this.frames % 300 === 0){
+        if (this.frames % 240 === 0){
              this.waterArray.push(new Water(this));
         }
     }
+
+    createTimer(){
+        
+        this.ctx.font = '32px serif';
+        this.ctx.fillStyle = 'white';
+        this.ctx.fillText(`Timer: ${this.countdownTimer}`, 5, 80 );
+
+    }
     
     createBadVeg(){
-        if (this.frames % 300 === 0){
+        if (this.frames % 240 === 0){
              this.vegetablesArray.push(new Vegetables(this));
         }
     }
 
     createMrBurns(){
-        if (this.frames % 300 === 0){
+        if (this.frames % 240 === 0){
             this.mrBurnsArray.push(new mrBurns(this));
        }   
     }
@@ -103,6 +118,10 @@ class Game {
         const crashed3 = this.mrBurnsArray.some(function (daBurns) {
            return homerSimpson.crashWith(daBurns);
         });
+
+        if (this.countdownTimer === 0){
+            this.stop()
+        }
     
         if (crashed) {
           this.stop();
@@ -110,7 +129,8 @@ class Game {
           this.stop();
         } else if (crashed3){
           this.stop();
-        }
+        } 
+        
       }
 
       scoreByItem(){
@@ -151,7 +171,8 @@ class Game {
 
     reset(){
         this.ctx.clearRect(0, 0, this.width, this.height);
-          
+        
+
 
     }
 

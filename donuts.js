@@ -3,7 +3,7 @@ class Donuts {
         this.game = game;
         this.x = 0;
         this.y = Math.floor(Math.random() * 450);
-        this.width = 25;
+        this.width = 50;
         this.height = 50;
         this.img = new Image();
         this.points = 1;
@@ -25,7 +25,7 @@ class Donuts {
     }
 
     drawDonuts(){
-        this.img.src = "/docs/assets/imgs/donuts.png"
+        this.img.src = "/docs/assets/imgs/donutsup.png"
         this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
         this.x += 2;
     }

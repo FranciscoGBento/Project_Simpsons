@@ -3,8 +3,8 @@ class Beer {
         this.game = game;
         this.x = Math.floor(Math.random() * 800);
         this.y = 0;
-        this.width = 25;
-        this.height = 50;
+        this.width = 75;
+        this.height = 75;
         this.img = new Image();
         this.points = 2;
     }
@@ -25,7 +25,7 @@ class Beer {
     }
 
     drawBeer(){
-        this.img.src = "/docs/assets/imgs/beer.png"
+        this.img.src = "/docs/assets/imgs/beerup.png"
         this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
         this.y += 2;
     }

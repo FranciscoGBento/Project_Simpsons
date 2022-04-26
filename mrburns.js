@@ -3,7 +3,7 @@ class mrBurns {
         this.game = game;
         this.x = Math.floor(Math.random() * 800);
         this.y = 0;
-        this.width = 25;
+        this.width = 75;
         this.height = 50;
         this.img = new Image();
         
@@ -26,7 +26,7 @@ class mrBurns {
       }
 
     drawMrBurns() {
-        this.img.src = "/docs/assets/imgs/mr burns.png"
+        this.img.src = "/docs/assets/imgs/burnsup.png"
         this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
         this.y += 2
     }
