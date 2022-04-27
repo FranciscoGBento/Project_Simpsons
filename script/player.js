@@ -9,9 +9,8 @@ class Player {
         
     }
 
-    drawHomer(){
-        
-        this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
+    drawHomer(){ 
+      this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
     }
 
     moveLeft() {
