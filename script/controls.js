@@ -7,22 +7,22 @@ class Controls {
     keyboardEvents() {
         window.addEventListener('keydown', (e) => {
           switch (e.code) {
-            case 'ArrowRight':
+            case 'KeyD':
               if (this.homer.x + this.homer.width < 900) {
                 this.homer.moveRight();
               }
               break;
-            case 'ArrowLeft':
+            case 'KeyA':
               if (this.homer.x > 10) {
                 this.homer.moveLeft();
               }
               break;
-            case 'ArrowDown':
+            case 'KeyS':
               if (this.homer.y + this.homer.height < 500) {
                 this.homer.moveDown();
               }
               break;  
-            case 'ArrowUp':
+            case 'KeyW':
               if (this.homer.y > 10) {
                 this.homer.moveUp();
               }
