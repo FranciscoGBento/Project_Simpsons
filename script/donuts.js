@@ -27,7 +27,7 @@ class Donuts {
     }
 
     drawDonuts(){
-        this.img.src = "../docs/assets/imgs/donutsup.png"
+        this.img.src = "./docs/assets/imgs/donutsup.png"
         this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
         this.x += 2;
     }

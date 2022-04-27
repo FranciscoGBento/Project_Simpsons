@@ -14,19 +14,19 @@ class Player {
     }
 
     moveLeft() {
-      this.img.src = "../docs/assets/imgs/homerleftup.png"
+      this.img.src = "./docs/assets/imgs/homerleftup.png"
       this.x -= 10;
     }
     moveRight() {
-      this.img.src = "../docs/assets/imgs/homerightup.png"
+      this.img.src = "./docs/assets/imgs/homerightup.png"
       this.x += 10;
     }
     moveUp() {
-      this.img.src = "../docs/assets/imgs/homerup.png"
+      this.img.src = "./docs/assets/imgs/homerup.png"
       this.y -= 10;
     }
     moveDown() {
-      this.img.src = "../docs/assets/imgs/homergdown.png"
+      this.img.src = "./docs/assets/imgs/homergdown.png"
       this.y += 10;
     }
 
