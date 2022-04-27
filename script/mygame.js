@@ -17,7 +17,11 @@ class Game {
         this.frames = 0;
         this.totalScore = 0;
         this.countdownTimer = 60;
-        this.nelson = new Image();
+        const nelson = new Image();
+        nelson.addEventListener("load", () => {
+            this.nelson = nelson
+        });
+        nelson.src = "/docs/assets/imgs/nelson1.png"
         this.soundNelson = new Audio('/docs/assets/sounds/aHaHnelson.mp3');
         this.donutsSound = new Audio('/docs/assets/sounds/donutsSound.mp3');
         this.beerSound = new Audio('/docs/assets/sounds/beerSound.wav');
@@ -178,7 +182,7 @@ class Game {
     stop(){
         clearInterval(this.intervalId);
         this.soundNelson.play()
-        this.nelson.src = "/docs/assets/imgs/nelson1.png"
+        
         this.ctx.drawImage(this.nelson, this.x, this.y, this.width, this.height)
     }
 
