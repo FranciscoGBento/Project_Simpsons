@@ -1,5 +1,5 @@
 body {
-    background-image: url("./docs/assets/imgs/cssBackground.jpg");
+    background-image: url("../docs/assets/imgs/cssBackground.jpg");
     background-size: 1550px;
 }
 
@@ -29,7 +29,7 @@ body {
 
 
 #canvas {
-    background-image: url("./docs/assets/imgs/SIMPSONS.jpg");
+    background-image: url("../docs/assets/imgs/SIMPSONS.jpg");
     background-size: contain;
     position: absolute;
     top:1;
