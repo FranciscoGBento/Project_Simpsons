@@ -28,6 +28,6 @@ class mrBurns {
     drawMrBurns() {
         this.img.src = "/docs/assets/imgs/burnsup.png"
         this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
-        this.y += 3
+        this.y += 2
     }
 }

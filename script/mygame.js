@@ -21,7 +21,10 @@ class Game {
         this.soundNelson = new Audio('/docs/assets/sounds/aHaHnelson.mp3');
         this.donutsSound = new Audio('/docs/assets/sounds/donutsSound.mp3');
         this.beerSound = new Audio('/docs/assets/sounds/beerSound.wav');
-        this.waterSound = new Audio('/docs/assets/sounds/dohHomer.WAV')
+        this.waterSound = new Audio('/docs/assets/sounds/dohHomer.WAV');
+        this.lsStore = null;
+        this.highscore = 0;
+
 
     }
 
@@ -30,6 +33,7 @@ class Game {
         this.homer.img.src = "/docs/assets/imgs/homerightup.png"; 
         this.controls = new Controls(this);
         this.controls.keyboardEvents();
+        this.checkHighScore();
         this.intervalId = setInterval(() => {
             this.update();
           }, 1000 / 60);
@@ -68,6 +72,7 @@ class Game {
         this.drawScore();
         this.createTimer();
         this.checkGameOver();
+        this.createHighScore();
 
     }
 
@@ -191,11 +196,31 @@ class Game {
 
     }
 
-    reset(){
-        this.ctx.clearRect(0, 0, this.width, this.height);
+
+
+
+
+    createHighScore(){
+        this.ctx.font = '32px serif';
+        this.ctx.fillStyle = 'white';
         
+        if  (this.highscore < this.totalScore){
+            this.highscore = this.totalScore
+            localStorage.setItem('highscore', this.highscore)
+            document.getElementsByClassName('highscore')[0].innerHTML = `HIGHSCORE: ${this.highscore}`
+        }
+        
+    } 
 
+    checkHighScore(){
+        this.lsStore = localStorage.getItem("highscore");
+        if(this.lsStore){
+            this.highscore = this.lsStore;
 
+        }
+        document.getElementsByClassName('highscore')[0].innerHTML = `HIGHSCORE: ${this.highscore}`
+        
     }
+
 
 }
