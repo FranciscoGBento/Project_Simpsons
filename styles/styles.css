@@ -22,12 +22,14 @@ body {
     display: flex;
     align-items: right;
     justify-content: flex-end;
+    padding-left: 900px;
+    
 }
 
 
 
 #canvas {
-    background-image: url("/docs/assets/imgs/canvasBackground.jpg");
+    background-image: url("/docs/assets/imgs/SIMPSONS.jpg");
     background-size: contain;
     position: absolute;
     top:1;
@@ -35,4 +37,22 @@ body {
     left: 0;
     right: 0;
     margin:auto;
+}
+
+.highscore {
+    padding-top: 16px;
+    padding-left: 32px;
+    font-size: 32px;
+    
+}
+
+button {
+    padding-right: 90px;
+    padding-left: 90px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 20px;
+    
+    
+    
 }

@@ -3,7 +3,7 @@ class Vegetables {
         this.game = game;
         this.x = 900;
         this.y = Math.floor(Math.random() * 450);
-        this.width = 50;
+        this.width = 30;
         this.height = 50;
         this.img = new Image();
     }
