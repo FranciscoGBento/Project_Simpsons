@@ -26,7 +26,7 @@ class Water {
 
 
     drawWaterAbove() {
-        this.img.src = "/docs/assets/imgs/Water.png"
+        this.img.src = "../docs/assets/imgs/Water.png"
         this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
         this.y -= 2;
     }

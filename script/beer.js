@@ -25,7 +25,7 @@ class Beer {
     }
 
     drawBeer(){
-        this.img.src = "/docs/assets/imgs/beerup.png"
+        this.img.src = "../docs/assets/imgs/beerup.png"
         this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
         this.y += 3;
     }

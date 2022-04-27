@@ -21,11 +21,11 @@ class Game {
         nelson.addEventListener("load", () => {
             this.nelson = nelson
         });
-        nelson.src = "/docs/assets/imgs/nelson1.png"
-        this.soundNelson = new Audio('/docs/assets/sounds/aHaHnelson.mp3');
-        this.donutsSound = new Audio('/docs/assets/sounds/donutsSound.mp3');
-        this.beerSound = new Audio('/docs/assets/sounds/beerSound.wav');
-        this.waterSound = new Audio('/docs/assets/sounds/dohHomer.WAV');
+        nelson.src = "../docs/assets/imgs/nelson1.png"
+        this.soundNelson = new Audio('../docs/assets/sounds/aHaHnelson.mp3');
+        this.donutsSound = new Audio('../docs/assets/sounds/donutsSound.mp3');
+        this.beerSound = new Audio('../docs/assets/sounds/beerSound.wav');
+        this.waterSound = new Audio('../docs/assets/sounds/dohHomer.WAV');
         this.lsStore = null;
         this.highscore = 0;
 
@@ -34,7 +34,7 @@ class Game {
 
     start(){
         this.homer = new Player(this, 400, 200, 60, 100)
-        this.homer.img.src = "/docs/assets/imgs/homerightup.png"; 
+        this.homer.img.src = "../docs/assets/imgs/homerightup.png"; 
         this.controls = new Controls(this);
         this.controls.keyboardEvents();
         this.checkHighScore();
@@ -189,7 +189,7 @@ class Game {
 
 
     drawBackground() {
-        this.background.src = "/docs/assets/imgs/moes.jpg";
+        this.background.src = "../docs/assets/imgs/moes.jpg";
         this.ctx.drawImage(this.background, this.x, this.y, this.width, this.height)
     }
 

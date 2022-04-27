@@ -24,7 +24,7 @@ class Vegetables {
       }
 
     drawVegetables() {
-        this.img.src = "/docs/assets/imgs/lettuceup.png"
+        this.img.src = "../docs/assets/imgs/lettuceup.png"
         this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
         this.x -= 3
     }
