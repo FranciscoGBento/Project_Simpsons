@@ -19,11 +19,19 @@ body {
 }
 
 .sideshow {
-    display: flex;
+    width: 200px;
+    height: 440px;
+    margin-left: 930px;
+    /* display: flex;
     align-items: right;
     justify-content: flex-end;
-    padding-left: 900px;
+    padding-left: 800px; */
     
+}
+
+.bartimg {
+    width: 200px;
+    height: 450px;
 }
 
 
@@ -32,7 +40,7 @@ body {
     background-image: url("../docs/assets/imgs/SIMPSONS.jpg");
     background-size: contain;
     position: absolute;
-    top:1;
+    top:300px;
     bottom: 0;
     left: 0;
     right: 0;
@@ -41,8 +49,8 @@ body {
 
 .highscore {
     padding-top: 16px;
-    padding-left: 32px;
-    font-size: 32px;
+    padding-left: 20px;
+    font-size: 24px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: yellow;
     -webkit-text-stroke-width: 1px;
@@ -51,9 +59,10 @@ body {
 }
 
 button {
-    padding-right: 90px;
-    padding-left: 90px;
+    padding-right: 50px;
+    padding-left: 50px;
     padding-top: 20px;
     padding-bottom: 20px;
-    margin: 20px;
+    margin-top: 44px;
+    margin-left: 20px;
 }
