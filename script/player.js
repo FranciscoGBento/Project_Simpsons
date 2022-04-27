@@ -5,7 +5,14 @@ class Player {
         this.y = y;
         this.width = width;
         this.height = height;
-        this.img = new Image();
+        const img = new Image();
+        img.addEventListener('load', () => {
+          this.img = img;
+          
+        });
+        img.src = "./docs/assets/imgs/homerightup.png"
+
+        
         
     }
 
