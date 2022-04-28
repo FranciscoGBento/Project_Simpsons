@@ -10,10 +10,7 @@ class Player {
           this.img = img;
           
         });
-        img.src = "./docs/assets/imgs/homerightup.png"
-
-        
-        
+        img.src = "./docs/assets/imgs/homerightup.png" 
     }
 
     drawHomer(){ 

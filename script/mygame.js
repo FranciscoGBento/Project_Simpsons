@@ -205,8 +205,6 @@ class Game {
 
 
     createHighScore(){
-        this.ctx.font = '32px serif';
-        this.ctx.fillStyle = 'white';
         
         if  (this.highscore < this.totalScore){
             this.highscore = this.totalScore
