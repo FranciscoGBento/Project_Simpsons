@@ -33,8 +33,7 @@ class Game {
     }
 
     start(){
-        this.homer = new Player(this, 400, 200, 60, 100)
-        /* this.homer.img.src = "./docs/assets/imgs/homerightup.png"; */ 
+        this.homer = new Player(this, 400, 200, 60, 100) 
         this.controls = new Controls(this);
         this.controls.keyboardEvents();
         this.checkHighScore();
