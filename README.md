@@ -1,4 +1,4 @@
-<img src="docs/assets/imgs/ihlogo.png">
+<img src="docs/assets/imgs/newlogoIH.png">
 
 
 # The Simpsons - Game 

@@ -27,7 +27,6 @@ class Controls {
                 this.homer.moveUp();
               }
               break;
-              
           }
         });
     }
