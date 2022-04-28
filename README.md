@@ -22,6 +22,6 @@
 <img src="docs/assets/imgs/rdme.png">
 
 
-<p>Don't forget to <b>HAVE FUN!</b></p>
+<p>Don't forget to <b>HAVE FUN!!!</b></p>
 
 
